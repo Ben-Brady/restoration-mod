@@ -832,7 +832,8 @@ function GroupAIStateBase:propagate_alert(alert_data)
 		local alert_epicenter = alert_data[2]
 
 		if alert_epicenter then
-			local alert_rad_sq = alert_data[3] * alert_data[3]
+			local alert_rad = alert_data[3] or 0
+			local alert_rad_sq = alert_rad * alert_rad
 			if self._enemy_weapons_hot then
 				alert_rad_sq = 4500 * 4500
 			end
